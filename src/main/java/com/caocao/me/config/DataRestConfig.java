@@ -3,6 +3,7 @@ package com.caocao.me.config;
 import com.caocao.me.entities.Product;
 import com.caocao.me.entities.ProductCategory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.Set;
 
 @Configuration
+@EnableCaching
 public class DataRestConfig implements RepositoryRestConfigurer {
 
     private EntityManager entityManager;

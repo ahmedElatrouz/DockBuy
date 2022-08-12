@@ -1,12 +1,15 @@
 package com.caocao.me.entities;
 
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "product_category")
-
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class ProductCategory {
 
     @Id

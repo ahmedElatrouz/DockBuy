@@ -1,5 +1,6 @@
 package com.caocao.me.entities;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -9,6 +10,9 @@ import java.util.Date;
 
 @Entity
 @Table(name = "product")
+@Cacheable
+//cach strategy, for more info visit : https://www.tutorialspoint.com/hibernate/hibernate_caching.htm
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Product {
 
     @Id
